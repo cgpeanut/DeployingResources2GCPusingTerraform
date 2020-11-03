@@ -47,12 +47,13 @@
  - Reference: https://cloud.google.com/sdk/docs/authorizing
 
  # Creating the Terrafrom Project and Service Account in GCP
- - (Setting Up and Configuring Terrform Project)
+ (Setting Up and Configuring Terrform Project)
+
     1. Create Terrafrom Project, new project in our GCP console that will host out Terraform Project.
     2. Create a Service Account,  create a new service account that will use to connect from our local environment to our GCO environment. 
     3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
 
-    - Configuration File Template
+ # Configuration File Template
         1. provider "google" {
         2.    credentials = file("NAME.json")
         3.    project = "<PROJECT_ID>"
