@@ -71,7 +71,7 @@
     - IAM & Admin -> Service Account -> Create New Service Account -> terraform description terrafrom service account -> create
     - Select Role Project Editor -> service account admin role robertoruizroxas@gmail.com -> create a key JSON terrafrom_key
 
-# Setup CentOS7 terraform to connect to GCP with Service account key using template
+# Setup terraform to connect to GCP with Service account key using template
     - cd $HOME
     - mkdir google
     - mv terraform-key.json google
@@ -90,4 +90,7 @@
     9.  "vpc_network" {
     10. name = "terraform-network" }
     11. # Note Tells terrafrom to build a VOC network in google cloud environment 
-    12. # particularly name it terrafrom-network
+    12. # particularly name it terraform-etwork
+
+# Enabling GCP APIs
+
