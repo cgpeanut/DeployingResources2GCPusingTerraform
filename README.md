@@ -4,4 +4,9 @@
 - Configuration files describe to Terraform the components needed to run a single application or your entire data center.
 - Generates an execution plan describing what it will do to reach the desired state, and executes it to build the entire infrastructure. 
 - As the configuration changes, Terraform is able to determine what changed and create incremental execution plans whihc can be applied. 
-- The infrastructure Terraform can manage includes low-level components such as DNS entries, SaaS features etc. 
+- The infrastructure Terraform can manage includes low-level components such as DNS entries, SaaS features etc.
+# Benefits from Terraform
+    1.  Infrastructure as Code
+    2.  Execution Plans
+    3.  Change Automation
+
