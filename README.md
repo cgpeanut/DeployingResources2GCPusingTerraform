@@ -14,4 +14,15 @@
     - Widely-used cloud tool 
     - Multi-Cloud Development, you can use Terrafrom in all major cloud public cloud providers AWS, GCP and Azure.
     - Terraform uses HCL, this is HashiCorp's configuration Language for creating IaC solutions for Cloud. 
-    - All Major Cloud Providers are Supported 
+    - All Major Cloud Providers are Supported .
+
+-Installing Terraform 
+    - centos7 server 
+    - sudo yum update -y 
+    - sudo yum -y install epel-release
+	- sudo yum -y install wget unzip vim git -y
+	- git --version
+	- wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
+	- unzip terraform_0.12.29_linux_amd64.zip
+    - sudo mv terraform /usr/local/bin/
+	- terraform --version
