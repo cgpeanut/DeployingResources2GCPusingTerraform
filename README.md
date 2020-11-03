@@ -27,9 +27,17 @@
     - sudo mv terraform /usr/local/bin/
 	- terraform --version
 
-# Enable snaps on CentOS and install Google Cloud SDK
-- sudo yum install epel-release
-- sudo yum install snapd
-- sudo systemctl enable --now snapd.socket
-- sudo ln -s /var/lib/snapd/snap /snap
-- sudo snap install google-cloud-sdk --classic
+# Install & Setup Google Cloud SDK
+- sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+
+# [google-cloud-sdk]
+# name=Google Cloud SDK
+# baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+# enabled=1
+# gpgcheck=1
+# repo_gpgcheck=1
+# gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+#       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+# EOM
+
+- yum install google-cloud-sdk -y
