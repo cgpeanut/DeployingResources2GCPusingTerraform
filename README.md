@@ -28,7 +28,6 @@
 	- terraform --version
 
 # Install & Setup Google Cloud SDK
-()
     1. sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
     2. [google-cloud-sdk]
     3. name=Google Cloud SDK
@@ -56,7 +55,6 @@
     3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
 
  # Configuration File Template
- ()
     1. provider "google" {
     2.    credentials = file("NAME.json")
     3.    project = "<PROJECT_ID>"
