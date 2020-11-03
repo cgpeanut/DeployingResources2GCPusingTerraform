@@ -40,5 +40,8 @@
  10. EOM
  11.  yum install google-cloud-sdk -y
 
- # Initialize Cloud SDK
+ # Initialize Cloud 
 - gcloud init --console-only
+ # Authorizing Cloud SDK Tools
+ - gcloud auth activate-service-account --key-file [KEY_FILE]
+ - Reference: https://cloud.google.com/sdk/docs/authorizing
