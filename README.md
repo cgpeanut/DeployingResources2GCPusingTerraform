@@ -75,12 +75,13 @@
     - cd $HOME
     - mkdir google
     - mv terraform-key.json google
+    - vi main.tf 
 
 # create terraform configuration file main.tf
 
     1. provider "google" {
     2.    credentials = file("terraform-key.json")
-    3.    project = "<terraformgcp-294523>"
+    3.    project = "terraformgcp-294523"
     4.    region  = "<us-central1>"
     5.    zone    = "<us-central1-c"
     6. }
@@ -88,3 +89,5 @@
     8.  resource "google_compute_network"
     9.  "vpc_network" {
     10. name = "terraform-network" }
+    11. # Note Tells terrafrom to build a VOC network in google cloud environment 
+    12. # particularly name it terrafrom-network
