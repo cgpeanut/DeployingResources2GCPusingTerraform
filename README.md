@@ -65,3 +65,26 @@
     8.  resource "google_compute_network"
     9.  "vpc_network" {
     10. name = "terraform-network" }
+
+# Create Project
+# Create Service Account 
+    - IAM & Admin -> Service Account -> Create New Service Account -> terraform description terrafrom service account -> create
+    - Select Role Project Editor -> service account admin role robertoruizroxas@gmail.com -> create a key JSON terrafrom_key
+
+# Setup CentOS7 terraform to connect to GCP with Service account key using template
+    - cd $HOME
+    - mkdir google
+    - mv terraform-key.json google
+
+# create terraform configuration file main.tf
+
+    1. provider "google" {
+    2.    credentials = file("terraform-key.json")
+    3.    project = "<terraformgcp-294523>"
+    4.    region  = "<us-central1>"
+    5.    zone    = "<us-central1-c"
+    6. }
+    7. 
+    8.  resource "google_compute_network"
+    9.  "vpc_network" {
+    10. name = "terraform-network" }
