@@ -36,9 +36,9 @@
  6. gpgcheck=1
  7. repo_gpgcheck=1
  8. gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
- 9.      https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+ 9.        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
  10. EOM
- 11.  yum install google-cloud-sdk -y
+ 11. yum install google-cloud-sdk -y
 
  # Initialize Cloud 
 - gcloud init --console-only
