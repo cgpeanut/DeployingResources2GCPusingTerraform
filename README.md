@@ -43,6 +43,7 @@
 
  # Initialize Cloud 
 - gcloud init --console-only
+ 
  # Authorizing Cloud SDK Tools
  - gcloud auth activate-service-account --key-file [KEY_FILE]
  - Reference: https://cloud.google.com/sdk/docs/authorizing
