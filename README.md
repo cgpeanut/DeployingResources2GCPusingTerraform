@@ -16,7 +16,7 @@
     - Terraform uses HCL, this is HashiCorp's configuration Language for creating IaC solutions for Cloud. 
     - All Major Cloud Providers are Supported .
 
--Installing Terraform 
+# Installing Terraform 
     - centos7 server 
     - sudo yum update -y 
     - sudo yum -y install epel-release
