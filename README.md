@@ -54,14 +54,15 @@
     3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
 
  # Configuration File Template
-        1. provider "google" {
-        2.    credentials = file("NAME.json")
-        3.    project = "<PROJECT_ID>"
-        4.    region  = "<us-central1>"
-        5.    zone    = "<us-central1-c"
-        6. }
-        7. 
-        8.  resource "google_compute_network"
-        9.  "vpc_network" {
-        10. name = "terraform-network" }
+
+    1. provider "google" {
+    2.    credentials = file("NAME.json")
+    3.    project = "<PROJECT_ID>"
+    4.    region  = "<us-central1>"
+    5.    zone    = "<us-central1-c"
+    6. }
+    7. 
+    8.  resource "google_compute_network"
+    9.  "vpc_network" {
+    10. name = "terraform-network" }
         
