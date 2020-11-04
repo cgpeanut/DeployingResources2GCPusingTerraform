@@ -126,21 +126,31 @@ Hamburger -> Dashboard -> Enable API & Services
 
 # Inside the main.tf Configuration File:
 
-1. provider "google" {
-2.   credentials = file("terraform-key.json")
-3.   project = "terraformgcp-294600"
-4.   region  = "us-central1"
-5.  zone    = "us-central1-c"
-6. }
-7. resource "google_compute_network"
-8.  "vpc_network" {
-9.     name = "terraform-network"
-10. }
-11. terraform {
-12.   backend "gcs" {
-13.    bucket = "terraform6315
-14.      prefix = "terraform1"
-15.   }
-16. }
+  1. provider "google" {
+  2.   credentials = file("terraform-key.json")
+  3. 
+  4.   project = "terraformgcp-294600"
+  5.   region  = "us-central1"
+  6.   zone    = "us-central1-c"
+  7. }
+  8. 
+  9. resource "google_compute_network" "vpc_network" {
+ 10.   name = "terraform-network"
+ 11. } 
+ 12.
+ 13. terraform {
+ 14.   backend "gcs" {
+ 15.     bucket = "terraform6315"
+ 16.     prefix = "terraform1"
+ 17.     credentials = "terraform-key.json" 
+ 17.   }
+ 18. }
+
+
+# use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
+- terrafrom init, plan, apply
+
+
+
 
 
