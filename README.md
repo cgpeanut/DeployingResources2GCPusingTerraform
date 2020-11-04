@@ -103,8 +103,8 @@ Hamburger -> Dashboard -> Enable API & Services
 
 # Setting Up a Remote State in in GCP with Terraform
 
-- Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage
-- (GCS).  This backend also supports state locking
+- Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS)
+- This backend also supports state locking
 
 # Example Configuration File:
     1. terraform {
