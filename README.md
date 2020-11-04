@@ -152,11 +152,3 @@ Hamburger -> Dashboard -> Enable API & Services
 
 # disregards any existing configuration
 - terraform init --reconfigure 
-
-https://github.com/hashicorp/terraform/issues/18369
-
-
-
-
-
-
