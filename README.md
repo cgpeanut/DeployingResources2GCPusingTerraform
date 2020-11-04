@@ -166,3 +166,10 @@ Terraform will perform the following actions:
       + routing_mode                    = (known after apply)
       + self_link                       = (known after apply)
     }
+
+# Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
+
+# Understanding Terrafrom init 
+- used to initialize your working directory that contains your configuration files.
+- init can be used to bring any working directory up to speed on changes within the configuration. 
+- by default when running init, Terrafrom assumes you already have configuration files in the current directory.
