@@ -94,3 +94,10 @@
 
 # Enabling GCP APIs
 
+Hamburger -> Dashboard -> Enable API & Services 
+- Cloud Resource Manager API
+- Compute Engine API
+- Cloud Storage API 
+- Cloud IAM API 
+- Cloud Billing API
+
