@@ -150,6 +150,12 @@ Hamburger -> Dashboard -> Enable API & Services
 # use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
 - terrafrom init, plan, apply
 
+# disregards any existing configuration
+- terraform init --reconfigure 
+
+https://github.com/hashicorp/terraform/issues/18369
+
+
 
 
 

@@ -14,5 +14,6 @@ terraform {
   backend "gcs" {
     bucket = "terraform6315"
     prefix = "terraform1"
+    credentials = "terraform-key.json"
   }
 }
