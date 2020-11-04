@@ -109,10 +109,10 @@ Hamburger -> Dashboard -> Enable API & Services
 - Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking. 
 - State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
 
-# Create two buckets in the google cloud console to store a backup of the terrafrom TF stte file. 
+# Create two buckets in the google cloud console to store a backup of the terrafrom TF state file. 
 - Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 -> 
 - Location Type: Region
-- Location: us-central-1 (iowa)
+- Location: us-central-1 iowa
 - Default Storage Class for your data: Standard
 - Access control: fine-grain
 - Advanced Settings: Google-mananged-key
@@ -125,24 +125,22 @@ Hamburger -> Dashboard -> Enable API & Services
 - vi main.tf
 
 # Inside the main.tf Configuration File:
-
   1. provider "google" {
   2.   credentials = file("terraform-key.json")
-  3. 
-  4.   project = "terraformgcp-294600"
-  5.   region  = "us-central1"
-  6.   zone    = "us-central1-c"
-  7. }
-  8. 
-  9. resource "google_compute_network" "vpc_network" {
- 10.   name = "terraform-network"
- 11. } 
- 12.
- 13. terraform {
- 14.   backend "gcs" {
- 15.     bucket = "terraform6315"
- 16.     prefix = "terraform1"
- 17.     credentials = "terraform-key.json" 
+  3.   project = "terraformgcp-294600"
+  4.   region  = "us-central1"
+  5.   zone    = "us-central1-c"
+  6. }
+  7. 
+  8. resource "google_compute_network" "vpc_network" {
+  9.   name = "terraform-network"
+ 10. } 
+ 11.
+ 12. terraform {
+ 13.   backend "gcs" {
+ 14.     bucket = "terraform6315"
+ 15.     prefix = "terraform1"
+ 16.     credentials = "terraform-key.json" 
  17.   }
  18. }
 
@@ -152,3 +150,19 @@ Hamburger -> Dashboard -> Enable API & Services
 
 # disregards any existing configuration
 - terraform init --reconfigure 
+
+# terraform apply
+Terraform will perform the following actions:
+
+# google_compute_network.vpc_network will be created
+  # + resource "google_compute_network" "vpc_network" {
+      + auto_create_subnetworks         = true
+      + delete_default_routes_on_create = false
+      + gateway_ipv4                    = (known after apply)
+      + id                              = (known after apply)
+      + mtu                             = (known after apply)
+#     + name                            = "terraform-network"
+      + project                         = (known after apply)
+      + routing_mode                    = (known after apply)
+      + self_link                       = (known after apply)
+    }
