@@ -89,8 +89,8 @@
     8.  resource "google_compute_network"
     9.  "vpc_network" {
     10. name = "terraform-network" }
-    11. # Note Tells terrafrom to build a VOC network in google cloud environment 
-    12. # particularly name it terraform-etwork
+    11. # Note Tells terrafrom to build a VPC network in google cloud environment 
+    12. # particularly name it terraform-network
 
 # Enabling GCP APIs
 
@@ -103,13 +103,44 @@ Hamburger -> Dashboard -> Enable API & Services
 
 # Setting Up a Remote State in in GCP with Terraform
 
-- Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS)
-- This backend also supports state locking
+- Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
+- This backend also supports state locking.
+- Remote backends allows Terraform to use a share store space or state data so any memebr of your team can use Terrafrom to manage the same infrastructure.
+- Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking. 
+- State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
 
-# Example Configuration File:
-    1. terraform {
-    2.    backend "gcs" {
-    3        bucket = "terraform-tf-bucket
-    4.       prefix = "test"
-    5.    }
-    6. }
+# Create two buckets in the google cloud console to store a backup of the terrafrom TF stte file. 
+- Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 -> 
+- Location Type: Region
+- Location: us-central-1 (iowa)
+- Default Storage Class for your data: Standard
+- Access control: fine-grain
+- Advanced Settings: Google-mananged-key
+- Create
+
+# Within the newly created bucket, create a folder named terrform6315
+
+# Once the Teraaform bucket and folder is created, use terminal to create a backend configuration to our main.tf file.
+
+- vi main.tf
+
+# Inside the main.tf Configuration File:
+
+1. provider "google" {
+2.   credentials = file("terraform-key.json")
+3.   project = "terraformgcp-294600"
+4.   region  = "us-central1"
+5.  zone    = "us-central1-c"
+6. }
+7. resource "google_compute_network"
+8.  "vpc_network" {
+9.     name = "terraform-network"
+10. }
+11. terraform {
+12.   backend "gcs" {
+13.    bucket = "terraform6315
+14.      prefix = "terraform1"
+15.   }
+16. }
+
+
