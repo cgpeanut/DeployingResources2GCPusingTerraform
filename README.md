@@ -175,3 +175,18 @@ Terraform will perform the following actions:
 - by default when running init, Terrafrom assumes you already have configuration files in the current directory.
 
 # Understanding Terraform 
+- UNderstanding terraform init
+- Understanding terraform plan
+- Understanding terraform apply
+- Understanding terraform output
+
+# Using Terrafrom Modules
+- Modules are packages of terrafrom configurations contained as a group. 
+- Use terrafrom init to download any modules thate are used in the config files.
+
+# Template - checkout main.tf
+# Template - checkout variables.tf
+
+# Creating Firewal Rules in GCP with Terraform - main.tf  
+
+
