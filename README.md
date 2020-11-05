@@ -51,51 +51,51 @@
  # Creating the Terrafrom Project and Service Account in GCP
  (Setting Up and Configuring Terrform Project)
 
-    1. Create Terrafrom Project, new project in our GCP console that will host out Terraform Project.
-    2. Create a Service Account,  create a new service account that will use to connect from our local environment to our GCO environment. 
-    3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
+1. Create Terrafrom Project, new project in our GCP console that will host out Terraform Project.
+2. Create a Service Account, create a new service account that will use to connect from our local environment to our GCO environment. 
+3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
 
  # Configuration File Template
-    1. provider "google" {
-    2.    credentials = file("NAME.json")
-    3.    project = "<PROJECT_ID>"
-    4.    region  = "<us-central1>"
-    5.    zone    = "<us-central1-c"
-    6. }
-    7. 
-    8.  resource "google_compute_network"
-    9.  "vpc_network" {
-    10. name = "terraform-network" }
+1. provider "google" {
+2.    credentials = file("NAME.json")
+3.    project = "<PROJECT_ID>"
+4.    region  = "<us-central1>"
+5.    zone    = "<us-central1-c"
+6. }
+7. 
+8.  resource "google_compute_network"
+9.  "vpc_network" {
+10. name = "terraform-network" }
 
 # Create Project
 # Create Service Account 
-    - IAM & Admin -> Service Account -> Create New Service Account -> terraform description terrafrom service account -> create
-    - Select Role Project Editor -> service account admin role robertoruizroxas@gmail.com -> create a key JSON terrafrom_key
+- IAM & Admin -> Service Account -> Create New Service Account -> terraform description terrafrom service account -> create
+- Select Role Project Editor -> service account admin role robertoruizroxas@gmail.com -> create a key JSON terrafrom_key
 
 # Setup terraform to connect to GCP with Service account key using template
-    - cd $HOME
-    - mkdir google
-    - mv terraform-key.json google
-    - vi main.tf 
+- cd $HOME
+- mkdir google
+- mv terraform-key.json google
+- vi main.tf 
 
 # create terraform configuration file main.tf
 
-    1. provider "google" {
-    2.    credentials = file("terraform-key.json")
-    3.    project = "terraformgcp-294600"
-    4.    region  = "us-central1"
-    5.    zone    = "us-central1-c"
-    6. }
-    7. 
-    8.  resource "google_compute_network"
-    9.  "vpc_network" {
-    10. name = "terraform-network" }
-    11. # Note Tells terrafrom to build a VPC network in google cloud environment 
-    12. # particularly name it terraform-network
+1. provider "google" {
+2.    credentials = file("terraform-key.json")
+3.    project = "terraformgcp-294600"
+4.    region  = "us-central1"
+5.    zone    = "us-central1-c"
+6. }
+7. 
+8.  resource "google_compute_network"
+9.  "vpc_network" {
+10. name = "terraform-network" }
+11. # Note Tells terrafrom to build a VPC network in google cloud environment 
+12. # particularly name it terraform-network
 
 # Enabling GCP APIs
 
-Hamburger -> Dashboard -> Enable API & Services 
+- Hamburger -> Dashboard -> Enable API & Services 
 - Cloud Resource Manager API
 - Compute Engine API
 - Cloud Storage API 
@@ -106,7 +106,7 @@ Hamburger -> Dashboard -> Enable API & Services
 
 - Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
 - This backend also supports state locking.
-- Remote backends allows Terraform to use a share store space or state data so any memebr of your team can use Terrafrom to manage the same infrastructure.
+- Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
 - Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking. 
 - State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
 
@@ -145,7 +145,6 @@ Hamburger -> Dashboard -> Enable API & Services
  17.   }
  18. }
 
-
 # use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
 - terrafrom init, plan, apply
 
@@ -156,7 +155,7 @@ Hamburger -> Dashboard -> Enable API & Services
 Terraform will perform the following actions:
 
 # google_compute_network.vpc_network will be created
-  # + resource "google_compute_network" "vpc_network" {
+   + resource "google_compute_network" "vpc_network" {
       + auto_create_subnetworks         = true
       + delete_default_routes_on_create = false
       + gateway_ipv4                    = (known after apply)
