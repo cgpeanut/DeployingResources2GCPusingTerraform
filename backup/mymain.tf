@@ -11,11 +11,14 @@ subnets = [
     subbnet_region =  var.region
   },
 ]
-  secondary_ranges = {
-    subnet-01 = []
-  }
-}
+    secondary_ranges = {
+      subnet-01 = []
 
+
+
+    }
+
+}
 
 module "network_routes" {
   source       = "terraform-google-modules/network/google//modules/routes"
