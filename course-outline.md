@@ -82,13 +82,14 @@ Note: Tells terrafrom to build a VPC network in google cloud environment particu
 it terraform-network
 ```
 Enabling APIs
+```
     1. Hamburger -> Dashboard -> Enable API & Services 
     2. Cloud Resource Manager API
     3. Compute Engine API
     4. Cloud Storage API 
     5. Cloud IAM API 
     6. Cloud Billing API
-
+```
     Setting Up Remote State in Cloud Storage
 ```
 Chapter 4: Terraform init, plan and apply
