@@ -34,7 +34,7 @@ Chapter 3: Creating your Terraform Admin Project
             $ unzip terraform_0.12.29_linux_amd64.zip
             $ sudo mv terraform /usr/local/bin/
             $ terraform --version
-
+```
     Creating the Terraform Project and Service Account
     Enabling APIs
     Setting Up Remote State in Cloud Storage
