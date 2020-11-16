@@ -65,6 +65,7 @@ $ Reference: https://cloud.google.com/sdk/docs/authorizing
         3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
 ```
 Configuration File Template
+```
 
 provider "google" {
    credentials = file("NAME.json")
@@ -76,6 +77,7 @@ provider "google" {
 resource "google_compute_network"
   "vpc_network" {
   name = "terraform-network" }
+```
 ```
     Enabling APIs
     Setting Up Remote State in Cloud Storage
