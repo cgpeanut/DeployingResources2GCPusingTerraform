@@ -152,11 +152,14 @@ terraform {
 use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
 - terrafrom init, plan, apply
 ```
+```
 disregards any existing configuration
 $ terraform init --reconfigure 
 ```
-$ terraform apply
+```
+Terraform apply
 Terraform will perform the following actions:
+```
 ```
 google_compute_network.vpc_network will be created
    + resource "google_compute_network" "vpc_network" {
@@ -172,7 +175,9 @@ google_compute_network.vpc_network will be created
     }
 
 ```
+```
 Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
+```
 ```
 Understanding Terrafrom init (main.tf configuration file ) used to initialize your
 working directory that contains your configuration files.
