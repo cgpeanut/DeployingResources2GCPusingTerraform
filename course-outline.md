@@ -91,6 +91,56 @@ Enabling APIs
     6. Cloud Billing API
 ```
     Setting Up Remote State in Cloud Storage
+
+    - Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
+    - This backend also supports state locking.
+
+Note: Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
+
+    - Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking.
+    - State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
+```
+Create two buckets in the google cloud console to store a backup of the terrafrom TF state file.
+Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 ->
+Location Type: Region
+Location: us-central-1 iowa
+Default Storage Class for your data: Standard
+Access control: fine-grain
+Advanced Settings: Google-mananged-key
+Create
+```
+Within the newly created bucket, create a folder named terrform6315
+Once the Teraaform bucket and folder is created, use terminal to create a backend configuration to our main.tf file.
+
+$ vi main.tf
+
+Inside the main.tf Configuration File:
+
+ provider "google" {
+    credentials = file("terraform-key.json")
+    project = "terraformgcp-294600"
+    region  = "us-central1"
+    zone    = "us-central1-c"
+ }
+
+ resource "google_compute_network" "vpc_network" {
+    name = "terraform-network"
+ }
+```
+terraform {
+  backend "gcs" {
+  bucket = "terraform6315"
+  prefix = "terraform1"
+  credentials = "terraform-key.json"
+  }
+}
+
+
+
+
+
+
+
 ```
 Chapter 4: Terraform init, plan and apply
     Understanding 'terraform init'

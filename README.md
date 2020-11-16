@@ -108,6 +108,7 @@ Enabling GCP APIs
 6. Cloud Billing API
 ```
 1. Setting Up a Remote State in in GCP with Terraform
+
 2. Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
 3. This backend also supports state locking.
 4. Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
