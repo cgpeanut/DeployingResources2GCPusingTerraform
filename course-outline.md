@@ -64,6 +64,19 @@ $ Reference: https://cloud.google.com/sdk/docs/authorizing
         2. Create a Service Account, create a new service account that will use to connect from our local environment to our GCO environment. 
         3. Set Up Configuration file, we are going to setup the configuration file in Terrafrom for our GCO environment.
 ```
+Configuration File Template
+
+provider "google" {
+   credentials = file("NAME.json")
+   project = "<PROJECT_ID>"
+   region  = "<us-central1>"
+   zone    = "<us-central1-c"
+}
+
+resource "google_compute_network"
+  "vpc_network" {
+  name = "terraform-network" }
+```
     Enabling APIs
     Setting Up Remote State in Cloud Storage
 ```
