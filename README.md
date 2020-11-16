@@ -43,7 +43,6 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 EOM
 ```
 $ sudo yum install google-cloud-sdk -y
-```
 Initialize Cloud 
 $ gcloud init --console-only
  
