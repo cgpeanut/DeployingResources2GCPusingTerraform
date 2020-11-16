@@ -158,40 +158,41 @@ $ terraform init --reconfigure
 $ terraform apply
 Terraform will perform the following actions:
 ```
-# google_compute_network.vpc_network will be created
+google_compute_network.vpc_network will be created
    + resource "google_compute_network" "vpc_network" {
       + auto_create_subnetworks         = true
       + delete_default_routes_on_create = false
       + gateway_ipv4                    = (known after apply)
       + id                              = (known after apply)
       + mtu                             = (known after apply)
-#     + name                            = "terraform-network"
+      + name                            = "terraform-network"
       + project                         = (known after apply)
       + routing_mode                    = (known after apply)
       + self_link                       = (known after apply)
     }
 
-# Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
-
-# Understanding Terrafrom init (main.tf configuration file )
-- used to initialize your working directory that contains your configuration files.
-- init can be used to bring any working directory up to speed on changes within the configuration. 
-- by default when running init, Terrafrom assumes you already have configuration files in the current directory.
-
-# Understanding Terraform 
-- UNderstanding terraform init
-- Understanding terraform plan
-- Understanding terraform apply
-- Understanding terraform output
-
-# Using Terrafrom Modules
-- Modules are packages of terrafrom configurations contained as a group. 
-- Use terrafrom init to download any modules thate are used in the config files.
-
-# Template - checkout main.tf
-# Template - checkout variables.tf
-
-# Creating Firewal Rules in GCP with Terraform - main.tf  
-
->>>>>>> 317ca171949544537bf15a74856307a516233cde
-
+```
+Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
+```
+Understanding Terrafrom init (main.tf configuration file ) used to initialize your
+working directory that contains your configuration files.
+```
+```
+init can be used to bring any working directory up to speed on changes within the configuration.  by default, when running init, Terraform assumes you alread have
+configuration files in the current directory.
+```
+Understanding Terraform 
+Understanding terraform init
+Understanding terraform plan
+Understanding terraform apply
+Understanding terraform output
+```
+Using Terrafrom Modules
+Modules are packages of terrafrom configurations contained as a group. 
+Use terrafrom init to download any modules thate are used in the config files.
+```
+Template - checkout main.tf
+```
+Template - checkout variables.tf
+```
+Creating Firewall Rules in GCP with Terraform - main.tf
