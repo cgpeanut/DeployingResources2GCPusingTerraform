@@ -1,5 +1,5 @@
 Terraform 
-1. Is a tool for building, chaging, and versioning infrastructure safely and efficiently. 
+1. Is a tool for building, changing, and versioning infrastructure safely and efficiently. 
 2. Can manage existing and popular service providers as well as custom in-house solutions.
 3. Configuration files describe to Terraform the components needed to run a single application or your entire data center.
 4. Generates an execution plan describing what it will do to reach the desired state, and executes it to build the entire infrastructure. 
