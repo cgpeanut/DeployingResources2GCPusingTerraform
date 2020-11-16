@@ -30,6 +30,7 @@ Installing Terraform
     $ sudo mv terraform /usr/local/bin/
     $ terraform --version
 ```
+```
 Install & Setup Google Cloud SDK
 $ sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
 [google-cloud-sdk]
