@@ -8,8 +8,6 @@ Terraform
 ```
 ```
 Benefits from Terraform
-```
-```
 1. Infrastructure as Code
 2. Execution Plans
 3. Change Automation
