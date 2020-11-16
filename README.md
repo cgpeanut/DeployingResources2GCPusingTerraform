@@ -18,8 +18,7 @@ Terraform is:
 2. Multi-Cloud Development, you can use Terrafrom in all major cloud public cloud providers AWS, GCP and Azure.
 3. Terraform uses HCL, this is HashiCorp's configuration Language for creating IaC solutions for Cloud. 
 4. All Major Cloud Providers are Supported .
-```
-```
+
 Installing Terraform 
     $ centos7 server 
     $ sudo yum update -y 
