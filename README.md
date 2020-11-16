@@ -72,19 +72,15 @@ resource "google_compute_network"
   "vpc_network" {
   name = "terraform-network" }
 ```
-```
-Create Project
+Create Project -> simple enough
 Create Service Account 
 1. IAM & Admin -> Service Account -> Create New Service Account -> terraform description terrafrom service account -> create
 2. Select Role Project Editor -> service account admin role robertoruizroxas@gmail.com -> create a key JSON terrafrom_key
 ```
-```
-Setup terraform to connect to GCP with Service account key using template
 $ cd $HOME
 $ mkdir google
 $ mv terraform-key.json google
 $ vi main.tf 
-```
 ```
 create terraform configuration file main.tf
 
@@ -99,11 +95,11 @@ resource "google_compute_network"
   "vpc_network" {
   name = "terraform-network" }
 ```
-```
-Note Tells terrafrom to build a VPC network in google cloud environment particularly name
+Note: Tells terrafrom to build a VPC network in google cloud environment particularly name
 it terraform-network
-Enabling GCP APIs
 
+```
+Enabling GCP APIs
 1. Hamburger -> Dashboard -> Enable API & Services 
 2. Cloud Resource Manager API
 3. Compute Engine API
@@ -111,58 +107,57 @@ Enabling GCP APIs
 5. Cloud IAM API 
 6. Cloud Billing API
 ```
-```
 1. Setting Up a Remote State in in GCP with Terraform
 2. Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
 3. This backend also supports state locking.
 4. Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
 5. Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking. 
 6. State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
+```
+Create two buckets in the google cloud console to store a backup of the terrafrom TF state file. 
+Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 -> 
+Location Type: Region
+Location: us-central-1 iowa
+Default Storage Class for your data: Standard
+Access control: fine-grain
+Advanced Settings: Google-mananged-key
+Create
+```
+Within the newly created bucket, create a folder named terrform6315
+Once the Teraaform bucket and folder is created, use terminal to create a backend configuration to our main.tf file.
 
-# Create two buckets in the google cloud console to store a backup of the terrafrom TF state file. 
-- Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 -> 
-- Location Type: Region
-- Location: us-central-1 iowa
-- Default Storage Class for your data: Standard
-- Access control: fine-grain
-- Advanced Settings: Google-mananged-key
-- Create
+$ vi main.tf
 
-# Within the newly created bucket, create a folder named terrform6315
+Inside the main.tf Configuration File:
 
-# Once the Teraaform bucket and folder is created, use terminal to create a backend configuration to our main.tf file.
+ provider "google" {
+    credentials = file("terraform-key.json")
+    project = "terraformgcp-294600"
+    region  = "us-central1"
+    zone    = "us-central1-c"
+ }
 
-- vi main.tf
-
-# Inside the main.tf Configuration File:
-  1. provider "google" {
-  2.   credentials = file("terraform-key.json")
-  3.   project = "terraformgcp-294600"
-  4.   region  = "us-central1"
-  5.   zone    = "us-central1-c"
-  6. }
-  7. 
-  8. resource "google_compute_network" "vpc_network" {
-  9.   name = "terraform-network"
- 10. } 
- 11.
- 12. terraform {
- 13.   backend "gcs" {
- 14.     bucket = "terraform6315"
- 15.     prefix = "terraform1"
- 16.     credentials = "terraform-key.json" 
- 17.   }
- 18. }
-
-# use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
+ resource "google_compute_network" "vpc_network" {
+    name = "terraform-network"
+ }
+```
+terraform {
+  backend "gcs" {
+  bucket = "terraform6315"
+  prefix = "terraform1"
+  credentials = "terraform-key.json" 
+  }
+}
+```
+use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
 - terrafrom init, plan, apply
-
-# disregards any existing configuration
-- terraform init --reconfigure 
-
-# terraform apply
+```
+disregards any existing configuration
+$ terraform init --reconfigure 
+```
+$ terraform apply
 Terraform will perform the following actions:
-
+```
 # google_compute_network.vpc_network will be created
    + resource "google_compute_network" "vpc_network" {
       + auto_create_subnetworks         = true
