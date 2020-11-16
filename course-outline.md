@@ -91,7 +91,7 @@ Enabling APIs
     6. Cloud Billing API
 ```
     Setting Up Remote State in Cloud Storage
-
+```
     - Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
     - This backend also supports state locking.
 
