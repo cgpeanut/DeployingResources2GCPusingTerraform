@@ -3,6 +3,12 @@ Chapter 1: Getting Started
 Chapter 2: Overview
     why you should use terraform to manage GCP
     what is Terraform ?
+        1. Is a tool for building, changing, and versioning infrastructure safely and efficiently.
+        2. Can manage existing and popular service providers as well as custom in-house solutions.
+        3. Configuration files describe to Terraform the components needed to run a single application or your entire data center.
+        4. Generates an execution plan describing what it will do to reach the desired state, and executes it to build the entire infrastructure. 
+        5. As the configuration changes, Terraform is able to determine what changed and create incremental execution plans whihc can be applied. 
+        6. The infrastructure Terraform can manage includes low-level components such as compute instances, load balancers, DNS entries, SaaS features like stackdriver etc.
     How does Terraform Differ from Google Deployment Manager? 
 ```
 Chapter 3: Creating your Terraform Admin Project
