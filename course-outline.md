@@ -50,11 +50,14 @@ EOM
 
 $ sudo yum install google-cloud-sdk -y
 Initialize Cloud 
-$ gcloud init --console-onl
+$ gcloud init --console-only
+```
+Authorizing Cloud SDK Tools
+$ gcloud auth activate-service-account --key-file [KEY_FILE]
+$ Reference: https://cloud.google.com/sdk/docs/authorizing
 ```
     Creating the Terraform Project and Service Account
-
-
+```
     Enabling APIs
     Setting Up Remote State in Cloud Storage
 ```
