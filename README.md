@@ -1,4 +1,4 @@
-# Terraform 
+Terraform 
 1. Is a tool for building, chaging, and versioning infrastructure safely and efficiently. 
 2. Can manage existing and popular service providers as well as custom in-house solutions.
 3. Configuration files describe to Terraform the components needed to run a single application or your entire data center.
@@ -7,7 +7,7 @@
 6. The infrastructure Terraform can manage includes low-level components such as compute instances, load balancers, DNS entries, SaaS features like stackdriver etc.
 ```
 ```
-## Benefits from Terraform
+Benefits from Terraform
 1. Infrastructure as Code
 2. Execution Plans
 3. Change Automation
@@ -15,11 +15,8 @@
 ```
 Terraform is: 
 1. Widely-used cloud tool 
-```
 2. Multi-Cloud Development, you can use Terrafrom in all major cloud public cloud providers AWS, GCP and Azure.
-```
 3. Terraform uses HCL, this is HashiCorp's configuration Language for creating IaC solutions for Cloud. 
-```
 4. All Major Cloud Providers are Supported .
 ```
 
@@ -84,7 +81,6 @@ resource "google_compute_network"
 # Create Service Account 
 - IAM & Admin -> Service Account -> Create New Service Account -> terraform description terrafrom service account -> create
 - Select Role Project Editor -> service account admin role robertoruizroxas@gmail.com -> create a key JSON terrafrom_key
-
 # Setup terraform to connect to GCP with Service account key using template
 - cd $HOME
 - mkdir google
