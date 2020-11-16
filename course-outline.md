@@ -36,6 +36,7 @@ Chapter 3: Creating your Terraform Admin Project
     $ terraform --version
 ```
 Install & Setup Google Cloud SDK
+```
     $ sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
 [google-cloud-sdk]
 name=Google Cloud SDK
