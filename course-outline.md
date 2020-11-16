@@ -9,20 +9,32 @@ Chapter 2: Overview
         4. Generates an execution plan describing what it will do to reach the desired state, and executes it to build the entire infrastructure.
         5. As the configuration changes, Terraform is able to determine what changed and create incremental execution plans whihc can be applied.
         6. The infrastructure Terraform can manage includes low-level components such as compute instances, load balancers, DNS entries, SaaS features like stackdriver etc.
+```
     How does Terraform Differ from Google Deployment Manager?
         Benefits from Terraform
             1. Infrastructure as Code
             2. Execution Plans
             3. Change Automation
 ```
-        Terraform is: 
-           1. Widely-used cloud tool 
+        Terraform is:
+           1. Widely-used cloud tool
            2. Multi-Cloud Development, you can use Terrafrom in all major cloud public cloud providers AWS, GCP and Azure.
-           3. Terraform uses HCL, this is HashiCorp's configuration Language for creating IaaC solutions for Cloud. 
-           4. All Major Cloud Providers are Supported 
+           3. Terraform uses HCL, this is HashiCorp's configuration Language for creating IaaC solutions for Cloud.
+           4. All Major Cloud Providers are Supported.
 ```
 Chapter 3: Creating your Terraform Admin Project
     Installing Terraform
+        Steps:
+            $ centos7 server 
+            $ sudo yum update -y 
+            $ sudo yum -y install epel-release
+            $ sudo yum -y install wget unzip vim git -y
+            $ git --version
+            $ wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
+            $ unzip terraform_0.12.29_linux_amd64.zip
+            $ sudo mv terraform /usr/local/bin/
+            $ terraform --version
+
     Creating the Terraform Project and Service Account
     Enabling APIs
     Setting Up Remote State in Cloud Storage
