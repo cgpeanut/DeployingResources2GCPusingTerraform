@@ -23,17 +23,16 @@ Chapter 2: Overview
            4. All Major Cloud Providers are Supported.
 ```
 Chapter 3: Creating your Terraform Admin Project
-    Installing Terraform
-        Steps:
-            $ centos7 server 
-            $ sudo yum update -y 
-            $ sudo yum -y install epel-release
-            $ sudo yum -y install wget unzip vim git -y
-            $ git --version
-            $ wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
-            $ unzip terraform_0.12.29_linux_amd64.zip
-            $ sudo mv terraform /usr/local/bin/
-            $ terraform --version
+    Step for Installing Terraform
+        $ centos7 server 
+        $ sudo yum update -y 
+        $ sudo yum -y install epel-release
+        $ sudo yum -y install wget unzip vim git -y
+        $ git --version
+        $ wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
+        $ unzip terraform_0.12.29_linux_amd64.zip
+        $ sudo mv terraform /usr/local/bin/
+        $ terraform --version
 ```
     Creating the Terraform Project and Service Account
     Enabling APIs
