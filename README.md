@@ -160,7 +160,6 @@ $ terraform init --reconfigure
 Terraform apply
 Terraform will perform the following actions:
 ```
-```
 google_compute_network.vpc_network will be created
    + resource "google_compute_network" "vpc_network" {
       + auto_create_subnetworks         = true
@@ -174,7 +173,6 @@ google_compute_network.vpc_network will be created
       + self_link                       = (known after apply)
     }
 
-```
 ```
 Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
 ```
