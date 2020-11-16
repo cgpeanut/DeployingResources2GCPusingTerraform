@@ -94,7 +94,7 @@ Enabling APIs
 ```
     - Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
     - This backend also supports state locking.
-
+```
 Note: Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
 ```
     - Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking.
