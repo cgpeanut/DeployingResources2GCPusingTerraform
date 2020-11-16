@@ -24,6 +24,7 @@ Chapter 2: Overview
 ```
 Chapter 3: Creating your Terraform Admin Project
     Step for Installing Terraform
+```
         $ centos7 server 
         $ sudo yum update -y 
         $ sudo yum -y install epel-release
