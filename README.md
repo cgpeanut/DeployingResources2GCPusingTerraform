@@ -19,7 +19,6 @@ Terraform is:
 3. Terraform uses HCL, this is HashiCorp's configuration Language for creating IaC solutions for Cloud. 
 4. All Major Cloud Providers are Supported .
 ```
-
 Installing Terraform 
     $ centos7 server 
     $ sudo yum update -y 
@@ -31,21 +30,18 @@ Installing Terraform
     $ sudo mv terraform /usr/local/bin/
     $ terraform --version
 ```
+Install & Setup Google Cloud SDK
+$ sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
 ```
-# Install & Setup Google Cloud SDK
-
-1. sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
-2. [google-cloud-sdk]
-3. name=Google Cloud SDK
-4. baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-5. enabled=1
-6. gpgcheck=1
-7. repo_gpgcheck=1
-8. gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-9.        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-10. EOM
-11. yum install google-cloud-sdk -y
-```
+$ sudo yum install google-cloud-sdk -y
 ```
 Initialize Cloud 
 $ gcloud init --console-only
