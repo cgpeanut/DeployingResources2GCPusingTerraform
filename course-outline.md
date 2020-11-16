@@ -96,7 +96,7 @@ Enabling APIs
     - This backend also supports state locking.
 
 Note: Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
-
+```
     - Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking.
     - State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
 ```
