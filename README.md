@@ -111,11 +111,11 @@ Enabling GCP APIs
 2. Stores the state as an object in a configurable prefix in a given bucket on Google Cloud Storage (GCS).
 3. This backend also supports state locking.
 4. Remote backends allows Terraform to use a share store space or state data so any member of your team can use Terrafrom to manage the same infrastructure.
-5. Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking. 
+5. Remote state, stores the state of an object in a configurable prefix, any given bucket in google cloud storage also supports state locking.
 6. State Locking if supported by your backend will lock the state of all operations that can write state, this prevents others from acquiring the lock and potetially corrupting your state file.
 ```
-Create two buckets in the google cloud console to store a backup of the terrafrom TF state file. 
-Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 -> 
+Create two buckets in the google cloud console to store a backup of the terrafrom TF state file.
+Hamburger -> Storage -> Create bucket -> uniquely name it mytfbucket6315 ->
 Location Type: Region
 Location: us-central-1 iowa
 Default Storage Class for your data: Standard
@@ -145,17 +145,16 @@ terraform {
   backend "gcs" {
   bucket = "terraform6315"
   prefix = "terraform1"
-  credentials = "terraform-key.json" 
+  credentials = "terraform-key.json"
   }
 }
 ```
 use terraform init, plan and apply to create the remote state in our google cloud storage and create the network as well.
-- terrafrom init, plan, apply
 ```
+terrafrom init, plan, apply
 ```
 disregards any existing configuration
-$ terraform init --reconfigure 
-```
+$ terraform init --reconfigure
 ```
 Terraform apply
 Terraform will perform the following actions:
@@ -172,7 +171,6 @@ google_compute_network.vpc_network will be created
       + routing_mode                    = (known after apply)
       + self_link                       = (known after apply)
     }
-
 ```
 Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
 ```
