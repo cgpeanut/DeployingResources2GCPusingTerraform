@@ -159,19 +159,6 @@ $ terraform init --reconfigure
 Terraform apply
 Terraform will perform the following actions:
 ```
-google_compute_network.vpc_network will be created
-   + resource "google_compute_network" "vpc_network" {
-      + auto_create_subnetworks         = true
-      + delete_default_routes_on_create = false
-      + gateway_ipv4                    = (known after apply)
-      + id                              = (known after apply)
-      + mtu                             = (known after apply)
-      + name                            = "terraform-network"
-      + project                         = (known after apply)
-      + routing_mode                    = (known after apply)
-      + self_link                       = (known after apply)
-    }
-```
 Hamburger -> Storage -> Browser -> terraform6315 -> terraform1 -> default.tfstate
 ```
 ```
