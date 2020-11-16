@@ -25,15 +25,26 @@ Chapter 2: Overview
 Chapter 3: Creating your Terraform Admin Project
     Step for Installing Terraform
 ```
-        $ centos7 server 
-        $ sudo yum update -y 
-        $ sudo yum -y install epel-release
-        $ sudo yum -y install wget unzip vim git -y
-        $ git --version
-        $ wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
-        $ unzip terraform_0.12.29_linux_amd64.zip
-        $ sudo mv terraform /usr/local/bin/
-        $ terraform --version
+    $ centos7 server 
+    $ sudo yum update -y 
+    $ sudo yum -y install epel-release
+    $ sudo yum -y install wget unzip vim git -y
+    $ git --version
+    $ wget https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip
+    $ unzip terraform_0.12.29_linux_amd64.zip
+    $ sudo mv terraform /usr/local/bin/
+    $ terraform --version
+```
+Install & Setup Google Cloud SDK
+    $ sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
 ```
     Creating the Terraform Project and Service Account
     Enabling APIs
