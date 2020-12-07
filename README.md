@@ -186,16 +186,102 @@ resource "google_compute_subnetwork" "public-subnetwork" {
   network       = google_compute_network.vpc_network.name
   }
 --- end of terraform code ----
-
-
-
 ```
 Chapter 7: Using Terraform to create Create Compute Engine Instance
     Defining your instance variables
     setting up startup script
     Hands on lab: Using Terraform to lunch a Compute Engine Instance in GCP
+- Create a Service Account
+
+    - From Google Cloud console's main navigation, choose IAM & Admin > Service Accounts.
+    - Click Create service account.
+    - Give your service account a name.
+    - Click Create.
+    - In the roles dropdown, select Project > Owner.
+    - Click Continue and then Done
+
+- Log in to the Host Instance and Ensure Terraform Is Installed
+    - From Google Cloud navigation, choose Compute Engine > VM instances.
+    - Click SSH next to terraform-instance.
+    - Use root privileges:
+
+         - sudo -i
+         - Change into the root directory:
+         - cd /
+
+- Input the path to communicate with Terraform into the /etc/profile file:
+
+    - echo "PATH='$PATH:/downloads/'" >> /etc/profile
+    - Run the following in order to be able to call Terraform:
+        - source /etc/profile
+        - Call Terraform:
+        - terraform
+
+- Create a Service Account Key within the Instance
+- Allow the SDK to communicate with GCP:
+- gcloud auth login
+- Enter Y at the prompt.
+- Click on the link in the output.
+- Select the Cloud Student account.
+- Click Allow.
+- Copy the code provided.
+- Paste the code into the terminal.
+- Create the service account key:
+- gcloud iam service-accounts keys create /downloads/compute-instance.json --iam-account <SERVICE_ACCOUNT_EMAIL>
+
+- Create and Deploy the Configuration File
+- Create a main.tf file:
+
+- vim main.tf
+- Paste the following configuration, replacing <PROJECT_NAME> with your project name (found in the top navigation bar of the Google Cloud console):
+
+---- Start of Compute Engine Terraform Code ----
+
+provider "google" {
+  version = "3.5.0"
+  credentials = file("/downloads/compute-instance.json")
+  project = "<PROJECT_NAME>"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+resource "google_compute_instance" "vm_instance" {
+  name         = "terraform-instance2"
+  machine_type = "f1-micro"
+  zone         = "us-central1-c"
+  boot_disk {
+    initialize_params {
+      image = "centos-cloud/centos-7"
+    }
+  }
+
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
+}
+---- Start of Compute Engine Terraform Code ----
+
+- Save and exit the file by pressing Escape followed by :wq.
+- Finish up by running terraform init, terraform validate, terraform plan, and terraform apply.
+
+
+
+
+
+
+
+
+
+
+
+
 ```
-Chapter 8: Using Terrafomr to Auto Scale and Load Balance and Managed Instanced Groups
+Chapter 8: Using Terraform to Auto Scale and Load Balance and Managed Instanced Groups
     Definig your Auto Scale and Load Balancing Variables 
     Hands on LabL Using Terrafomr to auto scale and load balance computer engine instances groups
 ```
