@@ -191,14 +191,15 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
     Defining your instance variables
     setting up startup script
     Hands on lab: Using Terraform to lunch a Compute Engine Instance in GCP
+
 - Create a Service Account
 
-    - From Google Cloud console's main navigation, choose IAM & Admin > Service Accounts.
-    - Click Create service account.
-    - Give your service account a name.
-    - Click Create.
-    - In the roles dropdown, select Project > Owner.
-    - Click Continue and then Done
+    1. From Google Cloud console's main navigation, choose IAM & Admin > Service Accounts.
+    2. Click Create service account.
+    3.  Give your service account a name.
+    4. Click Create.
+    5. In the roles dropdown, select Project > Owner.
+    6. Click Continue and then Done
 
 - Log in to the Host Instance and Ensure Terraform Is Installed
     - From Google Cloud navigation, choose Compute Engine > VM instances.
