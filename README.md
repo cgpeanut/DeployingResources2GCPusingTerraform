@@ -152,11 +152,41 @@ Chapter 5: Using Terraform to Create a New Project
     Using Terraform Modules
 ```
 Chapter 6: Using Terraform to Create a New VPC
-    Defining your network varibles
+    Defining your network variables
     Creating firewall and associated rules
     Defining public and private subnets
     Hand on lab: Using Terrafomr to Create a New VPC and Public Subnet in GCP
-        - 
+        - Create a service account
+            - GCP cpnsole (Hamburger) -> IAM & Admin -> Service Accounts
+                - Click Service account 
+                - Give service account a name 
+        - login to the terraform instance
+            - echo "PATH='$PATH:/downloads/'" >> /etc/profile # terraform executable is located.
+            - source /etc/profile
+            - gcloud auth login
+            - gcloud iam service-accounts keys create /downloads/instance.json --iam-account terraform@using-terraf-156-1e320073.iam.gserviceaccount.com
+            - cd /
+            - vim main.tf
+
+provider "google" {
+  version = "3.5.0"
+  credentials = file("/downloads/instance.json")
+  project = "<PROJECT_NAME>"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+resource "google_compute_subnetwork" "public-subnetwork" {
+  name          = "terraform-subnetwork"
+  ip_cidr_range = "10.2.0.0/16"
+  region        = "us-central1"
+  network       = google_compute_network.vpc_network.name
+  }
+
+
+
 ```
 Chapter 7: Using Terraform to create Create Compute Engine Instance
     Defining your instance variables
