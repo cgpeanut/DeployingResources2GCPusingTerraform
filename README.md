@@ -202,33 +202,30 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
     6. Click Continue and then Done
 
 - Log in to the Host Instance and Ensure Terraform Is Installed
-    - From Google Cloud navigation, choose Compute Engine > VM instances.
-    - Click SSH next to terraform-instance.
-    - Use root privileges:
-
+    1. From Google Cloud navigation, choose Compute Engine > VM instances.
+    2. Click SSH next to terraform-instance.
+    3. Use root privileges:
          - sudo -i
-         - Change into the root directory:
+    4. Change into the root directory:
          - cd /
-
-- Input the path to communicate with Terraform into the /etc/profile file:
-
-    - echo "PATH='$PATH:/downloads/'" >> /etc/profile
-    - Run the following in order to be able to call Terraform:
+    5. Input the path to communicate with Terraform into the /etc/profile file:
+        - echo "PATH='$PATH:/downloads/'" >> /etc/profile
+    6. Run the following in order to be able to call Terraform:
         - source /etc/profile
-        - Call Terraform:
+    7. Call Terraform:
         - terraform
 
 - Create a Service Account Key within the Instance
-- Allow the SDK to communicate with GCP:
-- gcloud auth login
-- Enter Y at the prompt.
-- Click on the link in the output.
-- Select the Cloud Student account.
-- Click Allow.
-- Copy the code provided.
-- Paste the code into the terminal.
-- Create the service account key:
-- gcloud iam service-accounts keys create /downloads/compute-instance.json --iam-account <SERVICE_ACCOUNT_EMAIL>
+    1. Allow the SDK to communicate with GCP:
+    2. gcloud auth login
+    3. Enter Y at the prompt.
+    4. Click on the link in the output.
+    5. Select the Cloud Student account.
+    6. Click Allow.
+    7. Copy the code provided.
+    8. Paste the code into the terminal.
+    9. Create the service account key:
+    10. gcloud iam service-accounts keys create /downloads/compute-instance.json --iam-account <SERVICE_ACCOUNT_EMAIL>
 
 - Create and Deploy the Configuration File
 - Create a main.tf file:
