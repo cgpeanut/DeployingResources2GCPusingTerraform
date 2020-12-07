@@ -228,10 +228,9 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
     10. gcloud iam service-accounts keys create /downloads/compute-instance.json --iam-account <SERVICE_ACCOUNT_EMAIL>
 
 - Create and Deploy the Configuration File
-- Create a main.tf file:
-
-- vim main.tf
-- Paste the following configuration, replacing <PROJECT_NAME> with your project name (found in the top navigation bar of the Google Cloud console):
+    1. Create a main.tf file:
+       - vim main.tf
+    2. Paste the following configuration, replacing <PROJECT_NAME> with your project name (found in the top navigation bar of the Google Cloud console):
 
 ---- Start of Compute Engine Terraform Code ----
 
@@ -264,8 +263,8 @@ resource "google_compute_instance" "vm_instance" {
 }
 ---- Start of Compute Engine Terraform Code ----
 
-- Save and exit the file by pressing Escape followed by :wq.
-- Finish up by running terraform init, terraform validate, terraform plan, and terraform apply.
+    3. Save and exit the file by pressing Escape followed by :wq.
+    4. Finish up by running terraform init, terraform validate, terraform plan, and terraform apply.
 
 
 
