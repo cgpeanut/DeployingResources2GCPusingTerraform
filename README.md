@@ -155,7 +155,7 @@ Chapter 6: Using Terraform to Create a New VPC
     Defining your network variables
     Creating firewall and associated rules
     Defining public and private subnets
-    Hand on lab: Using Terrafomr to Create a New VPC and Public Subnet in GCP
+    Hand on lab: Using Terraform to Create a New VPC and Public Subnet in GCP
         - Create a service account
             - GCP cpnsole (Hamburger) -> IAM & Admin -> Service Accounts
                 - Click Service account 
@@ -168,6 +168,7 @@ Chapter 6: Using Terraform to Create a New VPC
             - cd /
             - vim main.tf
 
+--- start of terraform code ----
 provider "google" {
   version = "3.5.0"
   credentials = file("/downloads/instance.json")
@@ -184,6 +185,7 @@ resource "google_compute_subnetwork" "public-subnetwork" {
   region        = "us-central1"
   network       = google_compute_network.vpc_network.name
   }
+--- end of terraform code ----
 
 
 
