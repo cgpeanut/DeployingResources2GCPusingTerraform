@@ -149,18 +149,19 @@ Chapter 4: Terraform init, plan and apply
     Terraform Basics: Understanding 'init', 'plan' and 'apply'
 ```
 Chapter 5: Using Terraform to Create a New Project
-    Using Terraform Modules 
+    Using Terraform Modules
 ```
 Chapter 6: Using Terraform to Create a New VPC
-    Defining your network varibles 
-    Creating firewall and associated rules 
+    Defining your network varibles
+    Creating firewall and associated rules
     Defining public and private subnets
     Hand on lab: Using Terrafomr to Create a New VPC and Public Subnet in GCP
+        - 
 ```
-Chapter 7: Using Terraform to create Create Computer Engine Instances
-    Defining your instance variables 
+Chapter 7: Using Terraform to create Create Compute Engine Instance
+    Defining your instance variables
     setting up startup script
-    Hands on lab: Using Terraform to lunch a Compute Emgine Instance in GCP
+    Hands on lab: Using Terraform to lunch a Compute Engine Instance in GCP
 ```
 Chapter 8: Using Terrafomr to Auto Scale and Load Balance and Managed Instanced Groups
     Definig your Auto Scale and Load Balancing Variables 
