@@ -191,16 +191,13 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
     Defining your instance variables
     setting up startup script
     Hands on lab: Using Terraform to lunch a Compute Engine Instance in GCP
-
 - Create a Service Account
-
     1. From Google Cloud console's main navigation, choose IAM & Admin > Service Accounts.
     2. Click Create service account.
     3.  Give your service account a name.
     4. Click Create.
     5. In the roles dropdown, select Project > Owner.
     6. Click Continue and then Done
-
 - Log in to the Host Instance and Ensure Terraform Is Installed
     1. From Google Cloud navigation, choose Compute Engine > VM instances.
     2. Click SSH next to terraform-instance.
@@ -214,7 +211,6 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
         - source /etc/profile
     7. Call Terraform:
         - terraform
-
 - Create a Service Account Key within the Instance
     1. Allow the SDK to communicate with GCP:
     2. gcloud auth login
@@ -226,13 +222,12 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
     8. Paste the code into the terminal.
     9. Create the service account key:
     10. gcloud iam service-accounts keys create /downloads/compute-instance.json --iam-account <SERVICE_ACCOUNT_EMAIL>
-
 - Create and Deploy the Configuration File
     1. Create a main.tf file:
        - vim main.tf
     2. Paste the following configuration, replacing <PROJECT_NAME> with your project name (found in the top navigation bar of the Google Cloud console):
 
----- Start of Compute Engine Terraform Code ----
+--- Start of Compute Engine Terraform Code ---
 
 provider "google" {
   version = "3.5.0"
@@ -261,23 +256,12 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 }
----- Start of Compute Engine Terraform Code ----
+--- Start of Compute Engine Terraform Code ---
+
+-  Save and exit the file by pressing Escape followed by wq:
+- Finish up by running terraform init, terraform validate, terraform plan, and terraform apply.
 ```
-
-    3. Save and exit the file by pressing Escape followed by wq:
-    4. Finish up by running terraform init, terraform validate, terraform plan, and terraform apply.
-
-
-
-
-
-
-
-
-
-
-
-
+```
 ```
 Chapter 8: Using Terraform to Auto Scale and Load Balance and Managed Instanced Groups
     Definig your Auto Scale and Load Balancing Variables 
