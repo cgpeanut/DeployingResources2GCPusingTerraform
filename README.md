@@ -268,7 +268,13 @@ resource "google_compute_instance" "vm_instance" {
 ```
 Chapter 8: Using Terraform to Auto Scale and Load Balance and Managed Instanced Groups
     Definig your Auto Scale and Load Balancing Variables 
-    Hands on LabL Using Terrafomr to auto scale and load balance computer engine instances groups
+    Hands on Lab: Using Terraform to auto scale and load balance computer engine instances groups
+
+
+
+
+
+
 ```
 Chapter 9: Cleaning up
     Deploying Resources Using Terraform 
