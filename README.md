@@ -262,6 +262,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 ---- Start of Compute Engine Terraform Code ----
+```
 
     3. Save and exit the file by pressing Escape followed by wq:
     4. Finish up by running terraform init, terraform validate, terraform plan, and terraform apply.
