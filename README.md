@@ -227,6 +227,9 @@ Chapter 7: Using Terraform to create Create Compute Engine Instance
        - vim main.tf
     2. Paste the following configuration, replacing <PROJECT_NAME> with your project name (found in the top navigation bar of the Google Cloud console):
 
+```
+```
+```
 --- Start of Compute Engine Terraform Code ---
 
 provider "google" {
